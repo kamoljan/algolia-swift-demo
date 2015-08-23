@@ -33,7 +33,7 @@ class MoviesTableViewController: UITableViewController, UISearchBarDelegate, UIS
     var movieIndex: Index!
     let query = Query()
     
-    var movies = [MovieRecord]()
+    var movies = [Ad]()
     
     var searchId = 0
     var displayedSearchId = -1
@@ -57,12 +57,15 @@ class MoviesTableViewController: UITableViewController, UISearchBarDelegate, UIS
         searchController!.searchBar.sizeToFit()
         
         // Algolia Search
-        let apiClient = Client(appID: "latency", apiKey: "dce4286c2833e8cf4b7b1f2d3fa1dbcb")
-        movieIndex = apiClient.getIndex("movies")
-        
+//        let apiClient = Client(appID: "latency", apiKey: "dce4286c2833e8cf4b7b1f2d3fa1dbcb")
+//        movieIndex = apiClient.getIndex("movies")
+      let apiClient = Client(appID: "HU2A6UF5VX", apiKey: "7bbbc005e3744372ad302dffbcef544c")
+      movieIndex = apiClient.getIndex("ads")
+
+      
         query.hitsPerPage = 15
-        query.attributesToRetrieve = ["title", "image", "rating", "year"]
-        query.attributesToHighlight = ["title"]
+        query.attributesToRetrieve = ["title", "description", "medium_list", "price", "loveCount"]
+        query.attributesToHighlight = ["title", "description"]
         
         // First load
         updateSearchResultsForSearchController(searchController)
@@ -96,9 +99,9 @@ class MoviesTableViewController: UITableViewController, UISearchBarDelegate, UIS
         cell.textLabel?.highlightedTextColor = UIColor(red:1, green:1, blue:0.898, alpha:1)
         cell.textLabel?.highlightedText = movie.title
         
-        cell.detailTextLabel?.text = "\(movie.year)"
+        cell.detailTextLabel?.text = "\(movie.description)"
         cell.imageView?.cancelImageRequestOperation()
-        cell.imageView?.setImageWithURL(NSURL(string: movie.image), placeholderImage: placeholder)
+        cell.imageView?.setImageWithURL(NSURL(string: "http://sushi.shopafter.com/fid/" + movie.medium_list), placeholderImage: placeholder)
 
         return cell
     }
@@ -121,9 +124,9 @@ class MoviesTableViewController: UITableViewController, UISearchBarDelegate, UIS
             let hits: [JSON] = json["hits"].arrayValue
             self.nbPages = UInt(json["nbPages"].intValue)
             
-            var tmp = [MovieRecord]()
+            var tmp = [Ad]()
             for record in hits {
-                tmp.append(MovieRecord(json: record))
+                tmp.append(Ad(json: record))
             }
             
             self.movies = tmp
@@ -153,9 +156,9 @@ class MoviesTableViewController: UITableViewController, UISearchBarDelegate, UIS
             let json = JSON(data!)
             let hits: [JSON] = json["hits"].arrayValue
             
-            var tmp = [MovieRecord]()
+            var tmp = [Ad]()
             for record in hits {
-                tmp.append(MovieRecord(json: record))
+                tmp.append(Ad(json: record))
             }
             
             self.movies.extend(tmp)

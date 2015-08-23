@@ -15,6 +15,7 @@
 		5D44D0231B35F87B008369AC /* MoviesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D44D0221B35F87B008369AC /* MoviesTableViewController.swift */; };
 		5D44D0251B3601E8008369AC /* MovieRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D44D0241B3601E8008369AC /* MovieRecord.swift */; };
 		5D9EB6AE1B3C3DC100BA6737 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9EB6AD1B3C3DC100BA6737 /* Helpers.swift */; };
+		8DFB30711B89FCE400AFC8B2 /* Ad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB30701B89FCE400AFC8B2 /* Ad.swift */; };
 		AA5BC57C1364C5FB7C70933A /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13D25C23D87861EC441A72F6 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		5D44D0221B35F87B008369AC /* MoviesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesTableViewController.swift; sourceTree = "<group>"; };
 		5D44D0241B3601E8008369AC /* MovieRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieRecord.swift; sourceTree = "<group>"; };
 		5D9EB6AD1B3C3DC100BA6737 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		8DFB30701B89FCE400AFC8B2 /* Ad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ad.swift; sourceTree = "<group>"; };
 		9BEC1C17860BAEDA209DB025 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +98,7 @@
 				5D44D0091B35F7B3008369AC /* Images.xcassets */,
 				5D44D00B1B35F7B3008369AC /* LaunchScreen.xib */,
 				5D44D0001B35F7B3008369AC /* Supporting Files */,
+				8DFB30701B89FCE400AFC8B2 /* Ad.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				5D44D0231B35F87B008369AC /* MoviesTableViewController.swift in Sources */,
 				5D44D0251B3601E8008369AC /* MovieRecord.swift in Sources */,
 				5D44D0031B35F7B3008369AC /* AppDelegate.swift in Sources */,
+				8DFB30711B89FCE400AFC8B2 /* Ad.swift in Sources */,
 				5D9EB6AE1B3C3DC100BA6737 /* Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
